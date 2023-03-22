@@ -1,3 +1,4 @@
+//Excel
 Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
 Workbook workbook = excel.Workbooks.Add();
 Worksheet worksheet = workbook.ActiveSheet;
@@ -6,7 +7,7 @@ worksheet.Cells[1, 1] = metin;
 workbook.SaveAs("C:\\text.xlsx");
 workbook.Close();
 excel.Quit();
-
+//Powerpoint
 Microsoft.Office.Interop.PowerPoint.Application powerpoint = new Microsoft.Office.Interop.PowerPoint.Application();
 Presentation presentation = powerpoint.Presentations.Add();
 Slide slide = presentation.Slides.Add(1, PpSlideLayout.ppLayoutBlank);
@@ -25,6 +26,7 @@ slide.Background.Fill.UserPicture(image.ToString());
 presentation.SaveAs("C:\\presentation.pptx");
 presentation.Close();
 powerpoint.Quit();
+//Word
 Microsoft.Office.Interop.Word.Application word = new Microsoft.Office.Interop.Word.Application();
 Document document = word.Documents.Add();
 string text = webBrowser1.Document.Body.InnerText;
